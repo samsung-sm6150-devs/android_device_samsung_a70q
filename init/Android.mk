@@ -14,25 +14,15 @@
 # limitations under the License.
 #
 
-include device/samsung/sm6150-common/BoardConfigCommon.mk
+LOCAL_PATH := $(call my-dir)
 
-DEVICE_PATH := device/samsung/a70q
+include $(CLEAR_VARS)
 
-# Assert
-TARGET_OTA_ASSERT_DEVICE := a70q
+LOCAL_MODULE_TAGS := optional
+LOCAL_C_INCLUDES := \
+    system/core/base/include \
+    system/core/init
+LOCAL_SRC_FILES := init_a70q.cpp
+LOCAL_MODULE := libinit_a70q
 
-# Bluetooth
-BOARD_BLUETOOTH_BDROID_BUILDCFG_INCLUDE_DIR := $(DEVICE_PATH)/bluetooth
-
-# Board
-TARGET_BOARD_NAME := SRPRL06C005
-
-# Init
-TARGET_INIT_VENDOR_LIB := libinit_a70q
-
-# Kernel
-BOARD_HEADER_VERSION := 1
-TARGET_KERNEL_CONFIG := a70q_defconfig
-
-# Get non-open-source specific aspects
-include vendor/samsung/a70q/BoardConfigVendor.mk
+include $(BUILD_STATIC_LIBRARY)
