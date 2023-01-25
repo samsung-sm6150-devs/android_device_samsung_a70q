@@ -14,7 +14,7 @@
 # limitations under the License.
 #
 
-include device/samsung/sm6150-common/BoardConfigCommon.mk
+-include device/samsung/sm6150-common/BoardConfigCommon.mk
 
 DEVICE_PATH := device/samsung/a70q
 
