@@ -38,5 +38,8 @@ TARGET_RECOVERY_DEVICE_MODULES := libinit_a70q
 BOARD_HEADER_VERSION := 1
 TARGET_KERNEL_CONFIG := a70q_defconfig
 
+# Properties
+TARGET_VENDOR_PROP += $(DEVICE_PATH)/vendor.prop
+
 # Get non-open-source specific aspects
 include vendor/samsung/a70q/BoardConfigVendor.mk
